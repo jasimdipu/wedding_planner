@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'locations',
     'participants',
     'partner_product_services',
-    'weddings'
+    'weddings',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [

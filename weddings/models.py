@@ -75,6 +75,7 @@ class ServiceIncluded(models.Model):
     #     return self.event_id
     pass
 
+
 class Status(models.Model):
     status_name = models.CharField(max_length=200, null=True, blank=True)
     offer = models.BooleanField(null=True, blank=True)

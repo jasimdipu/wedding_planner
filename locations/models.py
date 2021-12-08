@@ -13,7 +13,8 @@ class Country(models.Model):
 class City(models.Model):
     city_name = models.CharField(max_length=255, blank=True, null=True)
     postal_code = models.CharField(max_length=255, blank=True, null=True)
-    country_id = models.ForeignKey(Country, null=True, blank=True, on_delete=models.SET_NULL)
+    country_id = models.ForeignKey(
+        Country, null=True, blank=True, on_delete=models.SET_NULL, related_name='cities')
 
     def __str__(self) -> str:
         return self.city_name
@@ -22,4 +23,4 @@ class City(models.Model):
 class Location(models.Model):
     location_name = models.CharField(max_length=255, blank=True, null=True)
     city_id = models.ForeignKey(
-        City, null=True, blank=True, on_delete=models.SET_NULL)
+        City, null=True, blank=True, on_delete=models.SET_NULL, related_name='locations')
